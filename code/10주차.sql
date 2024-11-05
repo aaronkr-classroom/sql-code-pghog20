@@ -1,0 +1,16 @@
+SELECT * FROM 학생;
+
+--트랜잭션
+--BEGIN; 또는 BEGIN 또는 BEGIN TRANSACTION; (Postgre SQL)
+BEGIN; --START TRANSATION; -- MY SQL
+DELETE FROM 학생 WHERE 학생.성별 = '남';
+DELETE FROM 학생 WHERE 학생.성별 = '여';
+SELECT * FROM 학생;
+ROLLBACK; --또는 ROLLBACK WORK; 또는 ROLLBACK TRANSATION; 취소하기
+SELECT * FROM 학생;
+
+BEGIN;
+UPDATE 학생 SET 이름 = '홍길순' WHERE 학번 = 's002';
+SELECT * FROM 학생;
+COMMIT; -- 저장하기
+SELECT * FROM 학생;
